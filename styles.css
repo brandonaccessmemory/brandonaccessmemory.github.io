@@ -1,0 +1,20 @@
+.image-container {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+#main{
+    color :chocolate
+}
+
+h2[draggable] {
+    color :blue
+}
+
+p {
+    font-size : 15px
+}
+
+h3[value="1"]{
+    color :blueviolet;
+}
