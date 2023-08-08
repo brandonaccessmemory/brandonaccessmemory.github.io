@@ -20,37 +20,65 @@
 
 
   <body>
-    <div>
-    
-        <h1 id = "main">Brandon Hong</h1> 
-        <!-- <div id="snow-container"> </div>  -->
-        <p>This is my website</p>
+    <!-- <div id = "page-container"> -->
+
+      <div class = "section">  
+        <div id="snow-container"></div>
+
+        <div class = "header">
+            <h2>Helloasdasd</h2>
+            <ul class = "nav">
+              <li>Hello</li>
+              <li>Hello</li>
+              <li>Hello</li>
+            </ul>
+        </div>
+
+        <h1 id = "main">
+          <h3 id = "appear" class = "animate"> 
+          </h3>
+        </h1> 
+      
+        
         <!-- check if this is safe <a href="https://drive.google.com/file/d/18tPLX8Snwcoce-MFG6doBEXhGl0DRpw9/view?usp=sharing">View CV</a> -->
-        <hr>
-        <h2 draggable = "true"> Current Interests </h2>
-        <h3 value = "1" class="animate__animated animate__bounce">Fun</h3>
-          <div class="image-container">
-            <img src=".\assets\cats-and-soup.jpg" height = 200 alt="Image 1">
-          </div>
 
+
+        <div class="image-container">
+          <img src=".\assets\cats-and-soup.jpg" height = 200 alt="Image 1">
           <p class = "text"> This is my favourite game </p>
+        </div>
 
-          <div class="image-container">
-            <img src=".\assets\pikachu.jpeg" height = 200 alt="Image 1">
-          </div>
-
+        <!-- <div class="image-container">
+          <img src=".\assets\pikachu.jpeg" height = 200 alt="Image 1">
           <p class = "text"> This is my favourite </p>
-        <hr>
+        </div> -->
 
-    </div>
+      
+        <!-- appear-animation animate__animated animate__bounce" -->
+      </div>
 
-    <div id="snow-container"></div>
-    <script src="./main.js"></script>
+      <div class = "section" id = "spring">
+        <div id = "testing">
+          <p>Show Me</p>
+          <img src=".\assets\pikachu.jpeg" height = 200 alt="Image 1">
+        </div>
+      </div>
 
-    <footer>
-      <p class = "image-container"><a href="https://github.com/brandonaccessmemory"> <img src=".\assets\github.png" alt="Icon"> </a></p>
-      <p class = "image-container"><a href = "https://www.linkedin.com/in/brandon-hong-5726b5189/"> <img src=".\assets\linkedin.png" alt="Icon"> </a></p>
-      <p class = "image-container"><a href="mailto:hong.brandon62@gmail.com"> <img src=".\assets\gmail.png" alt="Icon"></a></p>
-    </footer>
-  </body>
+      <div class = "section" id = "summer">
+        <button class = "btn"> Click Me </button>
+      </div>
+
+      <div class = "section" id = "fall">
+        
+      </div>
+
+      <footer style = "background-color: lightsalmon;">
+        <p class = "image-container hover-container" data-text = "GitHub"><a href="https://github.com/brandonaccessmemory" target = "_blank"> <img src=".\assets\github.png" alt="Icon"> </a></p>
+        <p class = "image-container hover-container" data-text = "LinkedIn"><a href = "https://www.linkedin.com/in/brandon-hong-5726b5189/" target = "_blank"> <img src=".\assets\linkedin.png" alt="Icon"> </a></p>
+        <p class = "image-container hover-container" data-text = "Gmail"><a href="mailto:hong.brandon62@gmail.com" target = "_blank"> <img src=".\assets\gmail.png" alt="Icon"></a></p>
+      </footer>
+
+      <script src="./main.js"></script>
+    <!-- </div> -->
+  </body> 
 </html>
