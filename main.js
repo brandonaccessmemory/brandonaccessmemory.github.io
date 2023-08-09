@@ -1,8 +1,11 @@
 const snowContainer = document.getElementById("snow-container");
+const leaveContainer = document.getElementById("leave-container");
+const rainContainer = document.getElementById("rain");
+const flowerContainer = document.getElementById("garden");
+
 const myID = document.getElementById("testing");
 const snowContent = ['&#10052', '&#10053', '&#10054'];
 const animate = document.getElementById("appear");
-
 
 const sentence = "Hello, my name is Brandon"
 
@@ -45,6 +48,25 @@ const getRandomStyles = () => {
     `;
 }
 
+const createLeaf = (num) => {
+  for (var i = num; i > 0; i--) {
+    var leaf = document.createElement("div");
+    leaf.className = "leaf";
+    leaf.style.cssText = getRandomStyles();
+    leaveContainer.append(leaf);
+  }
+}
+
+const createRain = (num) => {
+  for (var i = num; i > 0; i--) {
+    console.log("rain");
+    var raindrop = document.createElement("div");
+    raindrop.className = "raindrop";
+    raindrop.style.cssText = getRandomStyles();
+    rainContainer.append(raindrop);
+  }
+}
+
 const createSnow = (num) => {
     for (var i = num; i > 0; i--) {
       var snow = document.createElement("div");
@@ -55,8 +77,20 @@ const createSnow = (num) => {
     }
   }
 
+  const createFlower = (num) => {
+    for (var i = num; i > 0; i--) {
+      var flower = document.createElement("div");
+      flower.className = "flower";
+      flower.style.cssText = getRandomStyles();
+      flowerContainer.append(flower);
+    }
+  }
+
   window.addEventListener("load", () => {
-    createSnow(35)
+    createSnow(35);
+    createLeaf(35);
+    createRain(35);
+    createFlower(35);
   });
 
   displayCharacterByCharacter();
@@ -86,7 +120,7 @@ const createSnow = (num) => {
 console.log(myID);
 var myScrollFunc = function() {
   var y = window.scrollY;
-  if (y > 400 && y < 1000) {
+  if (y > 300 && y < 800) {
     myID.className = "show animate__animated animate__backInLeft";
   } else {
     myID.className = "hide";

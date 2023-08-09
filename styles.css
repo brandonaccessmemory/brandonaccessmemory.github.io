@@ -33,7 +33,7 @@ h2{
   list-style-type: none;
   transition: background-color 0.3s ease;
   padding: 5px 130px;
-  margin-left:150px;
+  margin-left:300px;
 }
 
 .nav li:hover{
@@ -54,21 +54,28 @@ h2{
   position : relative;
 }
 
-/* #page-container {
-  position: relative;
-  min-height: 100vh;
-} */
+#winter {
+  background-color: black;
+  z-index : 1;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
 
 #summer {
   background-color: orange;
+  font-family: 'Raleway', sans-serif;
+  z-index:1;
 }
 
 #spring {
   background-color: yellowgreen;
+  z-index :1;
+  font-family: 'Moon Dance', cursive;
 }
 
 #fall {
   background-color: red;
+  z-index : 1;
+  font-family: 'Amatic SC', cursive;
 }
 
 .image-container {
@@ -90,20 +97,86 @@ h2{
 }
 
 #snow-container {  
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    transition: opacity 500ms;
-    width: 100%;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  transition: opacity 400ms;
+  width: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 .snow {
     animation: fall ease-in infinite, sway ease-in-out infinite;
     color: skyblue;
     position:absolute;
+}
+
+#leave-container { 
+  overflow:hidden;
+  z-index: -1;
+  height: 100vh;
+  position : absolute;
+  top :0;
+  width : 100%;
+  pointer-events:none;
+  transition: opacity 400ms;
+} 
+
+.leaf {
+  position: absolute; 
+  width :20px;
+  height:20px;
+  background-color: #228b22;
+  animation: fall ease-in infinite, sway ease-in-out infinite, glide 2s infinite alternate;
+}
+
+#rain { 
+  overflow:hidden;
+  z-index: -1;
+  height: 100vh;
+  position : absolute;
+  top :0;
+  width : 100%;
+  pointer-events:none;
+  transition: opacity 400ms;
+}
+
+.raindrop{
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background-color: #00f;
+  animation: fall linear infinite, sway 2s ease-in-out infinite;
+}
+
+#garden{
+  overflow:hidden;
+  z-index: -1;
+  height: 100vh;
+  position : absolute;
+  top :0;
+  width : 100%;
+  pointer-events:none;
+  transition: opacity 400ms;
+}
+
+.flower{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #f00;
+  border-radius: 50%;
+  animation: fall linear infinite, sway 2s ease-in-out infinite;
+}
+
+@keyframes glide {
+  from {
+    transform : rotate(0deg);
+  } to {
+    transform : rotate(50deg);
+  }
 }
 
 @keyframes fall {
@@ -150,7 +223,6 @@ p {
 
 .animate{
     color : #FDEBED;
-    font-family : "Times New Roman", serif;
     text-align: center;
     font-weight : 900;
     position : absolute;
@@ -188,6 +260,11 @@ p {
 
 .hover-container:hover::before {
   display: block;
+}
+
+.footer-container{
+  display : inline;
+  padding : 10px;
 }
 
 #footer{
