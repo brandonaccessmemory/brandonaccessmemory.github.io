@@ -1,0 +1,49 @@
+#summer {
+    background-color: #FFD700;
+    font-family: 'Raleway', sans-serif;
+  }
+
+#spring {
+    background-color: #E6F4EA;
+    font-family: 'Moon Dance', cursive;
+}
+
+#rain { 
+    overflow:hidden;
+    z-index: -1;
+    height: 100vh;
+    position : absolute;
+    top :0;
+    width : 100%;
+    pointer-events:none;
+    transition: opacity 400ms;
+}
+
+.raindrop{
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background-color: #00f;
+    animation: fall linear infinite, sway 2s ease-in-out infinite;
+}
+
+#garden{
+    overflow:hidden;
+    z-index: -1;
+    height: 100vh;
+    position : absolute;
+    top :0;
+    width : 100%;
+    pointer-events:none;
+    transition: opacity 400ms;
+}
+
+.flower{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #f00;
+    border-radius: 50%;
+    animation: fall linear infinite, sway 2s ease-in-out infinite;
+}
+  

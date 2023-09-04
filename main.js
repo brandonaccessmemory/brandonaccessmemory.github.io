@@ -1,13 +1,26 @@
 const snowContainer = document.getElementById("snow-container");
-const leaveContainer = document.getElementById("leave-container");
-const rainContainer = document.getElementById("rain");
-const flowerContainer = document.getElementById("garden");
+const leafContainer = document.getElementById("leave-container");
 
 const myID = document.getElementById("testing");
 const snowContent = ['&#10052', '&#10053', '&#10054'];
 const animate = document.getElementById("appear");
 
 const sentence = "Hello, my name is Brandon"
+
+
+const myList = document.getElementById("myList");
+  
+myList.addEventListener("click", function(event) {
+  if (event.target && event.target.nodeName === "LI") {
+    const targetId = event.target.getAttribute("data-target");
+    const targetSection = document.getElementById(targetId);
+    
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth",block: "start" });
+    }
+  }
+});
+
 
 function displayCharacterByCharacter() {
   let index = 0;
@@ -53,19 +66,11 @@ const createLeaf = (num) => {
     var leaf = document.createElement("div");
     leaf.className = "leaf";
     leaf.style.cssText = getRandomStyles();
-    leaveContainer.append(leaf);
+    leafContainer.append(leaf);
   }
 }
 
-const createRain = (num) => {
-  for (var i = num; i > 0; i--) {
-    console.log("rain");
-    var raindrop = document.createElement("div");
-    raindrop.className = "raindrop";
-    raindrop.style.cssText = getRandomStyles();
-    rainContainer.append(raindrop);
-  }
-}
+
 
 const createSnow = (num) => {
     for (var i = num; i > 0; i--) {
@@ -77,54 +82,25 @@ const createSnow = (num) => {
     }
   }
 
-  const createFlower = (num) => {
-    for (var i = num; i > 0; i--) {
-      var flower = document.createElement("div");
-      flower.className = "flower";
-      flower.style.cssText = getRandomStyles();
-      flowerContainer.append(flower);
-    }
-  }
+
 
   window.addEventListener("load", () => {
     createSnow(35);
     createLeaf(35);
-    createRain(35);
-    createFlower(35);
+    
   });
 
   displayCharacterByCharacter();
 
-  // const animateElements = document.querySelectorAll('.appear-animation');
-  // console.log(animateElements);
-  // const animateOnScroll = (entries, observer) => {
-  //   entries.forEach((entry) => {
-  //     if (entry.isIntersecting) {
-  //       entry.target.classList.add('animate__animated', 'animate__bounce');
-  //       observer.unobserve(entry.target);
-  //     }
-  //   });
-  // };
 
-  // const observer = new IntersectionObserver(animateOnScroll, {
-  //   root: null, // Use the viewport as the root
-  //   threshold: 0.1, // Adjust the threshold value based on your needs
-  // });
+  console.log(myID);
+  var myScrollFunc = function() {
+    var y = window.scrollY;
+    if (y > 300 && y < 800) {
+      myID.className = "show animate__animated animate__backInLeft";
+    } else {
+      myID.className = "hide";
+    }
+  };
 
-  // animateElements.forEach((element) => {
-  //   observer.observe(element);
-  // });
-
-//const myID = document.getElementsByClassName("animate hide appear-animation animate__animated animate__bounce");
-//const myID = document.getElementById("testing");
-console.log(myID);
-var myScrollFunc = function() {
-  var y = window.scrollY;
-  if (y > 300 && y < 800) {
-    myID.className = "show animate__animated animate__backInLeft";
-  } else {
-    myID.className = "hide";
-  }
-};
-
-window.addEventListener("scroll", myScrollFunc);
+  window.addEventListener("scroll", myScrollFunc);
