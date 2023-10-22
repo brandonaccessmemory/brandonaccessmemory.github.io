@@ -5,7 +5,7 @@ const myID = document.getElementById("testing");
 const snowContent = ['&#10052', '&#10053', '&#10054'];
 const animate = document.getElementById("appear");
 
-const sentence = "Hello, my name is Brandon"
+const sentence = "Dive into the Project Sandbox!"
 
 
 const myList = document.getElementById("myList");
@@ -69,7 +69,6 @@ const createLeaf = (num) => {
     leafContainer.append(leaf);
   }
 }
-
 
 
 const createSnow = (num) => {
